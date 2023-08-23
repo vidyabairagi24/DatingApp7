@@ -4,10 +4,7 @@ using API;
 using API.Data;
 using API.Interfaces;
 using API.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddApplicationServices(builder.Configuration);
-
+ 
 builder.Services.AddCors();
 
 builder.Services.AddScoped<ITokenService, TokenService>(); 
